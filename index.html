@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; /* To stack the text vertically */
+            font-family: 'Lucida Handwriting', cursive;
+            color: #ff00c7;
+            font-size: 3rem; /* Adjust the base font size as needed */
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            
+        }
+
+    
+
+        .container {
+            display:grid;
+            grid-template-rows: repeat(9, 1fr);
+            grid-template-columns:repeat(32, 1fr);
+            /* background-color: black; */
+            /* grid-gap: 5px; */
+            grid-row-gap: 5px;
+            
+
+        }
+        
+        img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Maintain aspect ratio and cover the whole container */
+        } 
+
+        .imgElement {
+        width: 100%; /* Adjust as needed */
+        height: 100%; /* Adjust as needed */
+        overflow: hidden; /* To ensure images don't overflow */
+        } 
+
+        .imgElement2 {
+        width: 100%; /* Adjust as needed */
+        height: 100%; /* Adjust as needed */
+        overflow: hidden; /* To ensure images don't overflow */
+        } 
+     
+        .pic{
+           /* grid-area: 2 / 4 / 4 / 6; */
+           /* background-color: blue; */
+           z-index: 1;
+        }
+
+        .item {
+            /* background-color: bisque; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        
+        .button {
+        /* Style your button here */
+        /* padding: 10px 10px; */
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 80%;
+        object-fit: cover;
+        width: 45px;
+        height: 45px;
+        }
+
+       
+        .tile {
+            width: 100%; /* Adjust the width to 100% to make it responsive */
+            height: 0; /* Set height to 0 to maintain the aspect ratio */
+            padding-bottom: 100%; /* Maintain a square aspect ratio (height = width) */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Add position: relative to allow absolute positioning */
+            cursor: pointer;
+        }
+
+        .tile:hover{ scale: 1.2; }
+
+       
+        .popup-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 600px;
+        background-color: #fff;
+        box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
+        border-radius: 8px;
+        padding: 1em;
+        display: none;
+        }
+    </style>
+    <title>Mae's OJT Journey</title>
+</head>
+<body style="background-color: #F9F1EC;">
+    <div class="main">
+        <div class="header">Mae's OJT Journey</div>
+        <div class="container" >
+            <div class="start pic item" id="start"></div>
+
+            <div class="item item-1" id="item1"></div>
+            <div class="item item-2" id="item2"></div>
+            <div class="item item-3" id="item3"></div>
+            <div class="item item-4" id="item4"></div>
+            <div class="item item-5" id="item5"></div>
+            <div class="item item-6" id="item6"></div>
+            <div class="item item-7" id="item7"></div>
+            <div class="item item-8" id="item8"></div>
+            <div class="item item-9" id="item9"></div>
+            <div class="item item-10" id="item10"></div>
+            <div class="item item-11" id="item11"></div>
+            <div class="item item-12" id="item12"></div>
+            <div class="item item-13" id="item13"></div>
+            <div class="item item-14" id="item14"></div>
+            <div class="item item-15" id="item15"></div>
+            <div class="item item-16" id="item16"></div>
+            <div class="item item-17" id="item17"></div>
+            <div class="item item-18" id="item18"></div>
+            <div class="item item-19" id="item19"></div>
+            <div class="item item-20" id="item20"></div>
+            <div class="item item-21" id="item21"></div>
+            <div class="item item-22" id="item22"></div>
+            <div class="item item-23" id="item23"></div>
+            <div class="item item-24" id="item24"></div>
+            <div class="item item-25" id="item25"></div>
+            <div class="item item-26" id="item26"></div>
+            <div class="item item-27" id="item27"></div>
+            <div class="item item-28" id="item28"></div>
+            <div class="item item-29" id="item29"></div>
+            <div class="item item-30" id="item30"></div>
+
+            <div class="end pic" id="end"></div>
+        </div>
+        <div class="popup-container" id="popupContainer">
+            <iframe loading="lazy" style="width: 100%; height: 80vh; border: none;" src="">
+            </iframe>
+          </div>
+    </div>
+    
+    
+
+    <script>
+        
+
+       
+
+        const end = document.getElementById("end");
+        end.style.gridRowStart = "1";
+        end.style.gridRowEnd =  "4";
+        end.style.gridColumnStart = "27";
+        end.style.gridColumnEnd =   "31"; 
+        const tileend = document.createElement("div"); // Use <a> element for a clickable button
+        tileend.classList.add("tile");
+        tileend.style.backgroundImage = "url('/images/end.png')" ;
+        tileend.href = "";
+        end.appendChild(tileend);
+
+        const start = document.getElementById("start");
+        start.style.gridRowStart = "4";
+        start.style.gridRowEnd =  "7";
+        start.style.gridColumnStart = "2";
+        start.style.gridColumnEnd =   "5"; 
+        const tiless = document.createElement("div"); // Use <a> element for a clickable button
+        tiless.classList.add("tile");
+        tiless.style.backgroundImage = "url('/images/start.png')" ;
+        tiless.href = "";
+        start.appendChild(tiless);
+
+
+        const item1 = document.getElementById("item1");
+        item1.style.gridRowStart = "5";
+        item1.style.gridRowEnd =  "6";
+        item1.style.gridColumnStart = "6";
+        item1.style.gridColumnEnd =   "7"; 
+        const tile1 = document.createElement("div"); // Use <a> element for a clickable button
+        tile1.classList.add("tile");
+        tile1.style.backgroundImage = "url('/images/01.png')" ;
+        const url1 = "https://www.canva.com/design/DAFrCcZ_6C4/view?embed";
+        item1.appendChild(tile1);
+        tile1.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url1);
+        });
+        
+
+        const item2 = document.getElementById("item2");
+        item2.style.gridRowStart = "5";
+        item2.style.gridRowEnd =  "6";
+        item2.style.gridColumnStart = "8";
+        item2.style.gridColumnEnd =   "9"; 
+        const tile2 = document.createElement("div"); // Use <a> element for a clickable button
+        tile2.classList.add("tile");
+        tile2.style.backgroundImage = "url('/images/02.png')" ;
+        const url2 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item2.appendChild(tile2);
+        tile2.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url2);
+        });
+        
+        
+        const item3 = document.getElementById("item3");
+        item3.style.gridRowStart = "6";
+        item3.style.gridRowEnd =  "7";
+        item3.style.gridColumnStart = "9";
+        item3.style.gridColumnEnd =   "10"; 
+        const tile3 = document.createElement("div"); // Use <a> element for a clickable button
+        tile3.classList.add("tile");
+        tile3.style.backgroundImage = "url('/images/03.png')" ;
+        const url3 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item3.appendChild(tile3);
+        tile3.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url3);
+        });
+        
+        const item4 = document.getElementById("item4");
+        item4.style.gridRowStart = "6";
+        item4.style.gridRowEnd =  "7";
+        item4.style.gridColumnStart = "11";
+        item4.style.gridColumnEnd =   "12"; 
+        const tile4 = document.createElement("div"); // Use <a> element for a clickable button
+        tile4.classList.add("tile");
+        tile4.style.backgroundImage = "url('/images/04.png')" ;
+        const url4 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item4.appendChild(tile4);
+        tile4.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url4);
+        });
+
+        const item5 = document.getElementById("item5");
+        item5.style.gridRowStart = "5";
+        item5.style.gridRowEnd =  "6";
+        item5.style.gridColumnStart = "12";
+        item5.style.gridColumnEnd =   "13"; 
+        const tile5 = document.createElement("div"); // Use <a> element for a clickable button
+        tile5.classList.add("tile");
+        tile5.style.backgroundImage = "url('/images/05.png')" ;
+        const url5 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item5.appendChild(tile5);
+        tile5.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url5);
+        });
+        
+
+        const item6 = document.getElementById("item6");
+        item6.style.gridRowStart = "4";
+        item6.style.gridRowEnd =  "5";
+        item6.style.gridColumnStart = "11";
+        item6.style.gridColumnEnd =   "12"; 
+        const tile6 = document.createElement("div"); // Use <a> element for a clickable button
+        tile6.classList.add("tile");
+        tile6.style.backgroundImage = "url('/images/06.png')" ;
+        const url6 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item6.appendChild(tile6);
+        tile6.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url6);
+        });
+        
+
+        const item7 = document.getElementById("item7");
+        item7.style.gridRowStart = "3";
+        item7.style.gridRowEnd =  "4";
+        item7.style.gridColumnStart = "11";
+        item7.style.gridColumnEnd =   "12"; 
+        const tile7 = document.createElement("div"); // Use <a> element for a clickable button
+        tile7.classList.add("tile");
+        tile7.style.backgroundImage = "url('/images/07.png')" ;
+        const url7 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item7.appendChild(tile7);
+        tile7.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url7);
+        });
+
+        const item8 = document.getElementById("item8");
+        item8.style.gridRowStart = "2";
+        item8.style.gridRowEnd =  "3";
+        item8.style.gridColumnStart = "12";
+        item8.style.gridColumnEnd =   "13"; 
+        const tile8 = document.createElement("div"); // Use <a> element for a clickable button
+        tile8.classList.add("tile");
+        tile8.style.backgroundImage = "url('/images/08.png')" ;
+        const url8 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item8.appendChild(tile8);
+        tile8.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url8);
+        });
+
+        const item9 = document.getElementById("item9");
+        item9.style.gridRowStart = "1";
+        item9.style.gridRowEnd =  "2";
+        item9.style.gridColumnStart = "13";
+        item9.style.gridColumnEnd =   "14"; 
+        const tile9 = document.createElement("div"); // Use <a> element for a clickable button
+        tile9.classList.add("tile");
+        tile9.style.backgroundImage = "url('/images/09.png')" ;
+        const url9 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item9.appendChild(tile9);
+        tile9.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url9);
+        });
+
+
+        const item10 = document.getElementById("item10");
+        item10.style.gridRowStart = "1";
+        item10.style.gridRowEnd =  "2";
+        item10.style.gridColumnStart = "15";
+        item10.style.gridColumnEnd =   "16"; 
+        const tile10 = document.createElement("div"); // Use <a> element for a clickable button
+        tile10.classList.add("tile");
+        tile10.style.backgroundImage = "url('/images/010.png')" ;
+        const url10 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item10.appendChild(tile10);
+        tile10.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url10);
+        });
+
+
+        const item11 = document.getElementById("item11");
+        item11.style.gridRowStart = "1";
+        item11.style.gridRowEnd =  "2";
+        item11.style.gridColumnStart = "17";
+        item11.style.gridColumnEnd =   "18"; 
+        const tile11 = document.createElement("div"); // Use <a> element for a clickable button
+        tile11.classList.add("tile");
+        tile11.style.backgroundImage = "url('/images/011.png')" ;
+        const url11 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item11.appendChild(tile11);
+        tile11.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url11);
+        });
+
+
+        const item12 = document.getElementById("item12");
+        item12.style.gridRowStart = "2";
+        item12.style.gridRowEnd =  "3";
+        item12.style.gridColumnStart = "18";
+        item12.style.gridColumnEnd =   "19"; 
+        const tile12 = document.createElement("div"); // Use <a> element for a clickable button
+        tile12.classList.add("tile");
+        tile12.style.backgroundImage = "url('/images/012.png')" ;
+        const url12 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item12.appendChild(tile12);
+        tile12.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url12);
+        });
+
+
+        const item13 = document.getElementById("item13");
+        item13.style.gridRowStart = "3";
+        item13.style.gridRowEnd =  "4";
+        item13.style.gridColumnStart = "18";
+        item13.style.gridColumnEnd =   "19"; 
+        const tile13 = document.createElement("div"); // Use <a> element for a clickable button
+        tile13.classList.add("tile");
+        tile13.style.backgroundImage = "url('/images/013.png')" ;
+        const url13 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item13.appendChild(tile13);
+        tile13.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url13);
+        });
+
+
+        const item14 = document.getElementById("item14");
+        item14.style.gridRowStart = "4";
+        item14.style.gridRowEnd =  "5";
+        item14.style.gridColumnStart = "17";
+        item14.style.gridColumnEnd =   "18"; 
+        const tile14 = document.createElement("div"); // Use <a> element for a clickable button
+        tile14.classList.add("tile");
+        tile14.style.backgroundImage = "url('/images/014.png')" ;
+        const url14 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item14.appendChild(tile14);
+        tile14.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url14);
+        });
+
+
+        const item15 = document.getElementById("item15");
+        item15.style.gridRowStart = "5";
+        item15.style.gridRowEnd =  "6";
+        item15.style.gridColumnStart = "16";
+        item15.style.gridColumnEnd =   "17"; 
+        const tile15 = document.createElement("div"); // Use <a> element for a clickable button
+        tile15.classList.add("tile");
+        tile15.style.backgroundImage = "url('/images/015.png')" ;
+        const url15 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item15.appendChild(tile15);
+        tile15.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url15);
+        });
+
+
+        const item16 = document.getElementById("item16");
+        item16.style.gridRowStart = "6";
+        item16.style.gridRowEnd =  "7";
+        item16.style.gridColumnStart = "15";
+        item16.style.gridColumnEnd =   "16"; 
+        const tile16 = document.createElement("div"); // Use <a> element for a clickable button
+        tile16.classList.add("tile");
+        tile16.style.backgroundImage = "url('/images/016.png')" ;
+        const url16 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item16.appendChild(tile16);
+        tile16.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url16);
+        });
+
+
+        const item17 = document.getElementById("item17");
+        item17.style.gridRowStart = "7";
+        item17.style.gridRowEnd =  "8";
+        item17.style.gridColumnStart = "14";
+        item17.style.gridColumnEnd =   "15"; 
+        const tile17 = document.createElement("div"); // Use <a> element for a clickable button
+        tile17.classList.add("tile");
+        tile17.style.backgroundImage = "url('/images/017.png')" ;
+        const url17 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item17.appendChild(tile17);
+        tile17.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url17);
+        });
+
+
+        const item18 = document.getElementById("item18");
+        item18.style.gridRowStart = "8";
+        item18.style.gridRowEnd =  "9";
+        item18.style.gridColumnStart = "14";
+        item18.style.gridColumnEnd =   "15"; 
+        const tile18 = document.createElement("div"); // Use <a> element for a clickable button
+        tile18.classList.add("tile");
+        tile18.style.backgroundImage = "url('/images/018.png')" ;
+        const url18 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item18.appendChild(tile18);
+        tile18.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url18);
+        });
+
+
+        const item19 = document.getElementById("item19");
+        item19.style.gridRowStart = "9";
+        item19.style.gridRowEnd =  "10";
+        item19.style.gridColumnStart = "15";
+        item19.style.gridColumnEnd =   "16"; 
+        const tile19 = document.createElement("div"); // Use <a> element for a clickable button
+        tile19.classList.add("tile");
+        tile19.style.backgroundImage = "url('/images/019.png')" ;
+        const url19 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item19.appendChild(tile19);
+        tile19.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url19);
+        });
+
+
+        const item20 = document.getElementById("item20");
+        item20.style.gridRowStart = "9";
+        item20.style.gridRowEnd =  "10";
+        item20.style.gridColumnStart = "17";
+        item20.style.gridColumnEnd =   "18"; 
+        const tile20 = document.createElement("div"); // Use <a> element for a clickable button
+        tile20.classList.add("tile");
+        tile20.style.backgroundImage = "url('/images/020.png')" ;
+        const url20 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item20.appendChild(tile20);
+        tile20.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url20);
+        });
+
+
+        const item21 = document.getElementById("item21");
+        item21.style.gridRowStart = "9";
+        item21.style.gridRowEnd =  "10";
+        item21.style.gridColumnStart = "19";
+        item21.style.gridColumnEnd =   "20"; 
+        const tile21 = document.createElement("div"); // Use <a> element for a clickable button
+        tile21.classList.add("tile");
+        tile21.style.backgroundImage = "url('/images/021.png')" ;
+        const url21 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item21.appendChild(tile21);
+        tile21.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url21);
+        });
+
+
+        const item22 = document.getElementById("item22");
+        item22.style.gridRowStart = "8";
+        item22.style.gridRowEnd =  "9";
+        item22.style.gridColumnStart = "20";
+        item22.style.gridColumnEnd =   "21"; 
+        const tile22 = document.createElement("div"); // Use <a> element for a clickable button
+        tile22.classList.add("tile");
+        tile22.style.backgroundImage = "url('/images/022.png')" ;
+        const url22 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item22.appendChild(tile22);
+        tile22.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url22);
+        });
+
+
+        const item23 = document.getElementById("item23");
+        item23.style.gridRowStart = "7";
+        item23.style.gridRowEnd =  "8";
+        item23.style.gridColumnStart = "21";
+        item23.style.gridColumnEnd =   "22"; 
+        const tile23 = document.createElement("div"); // Use <a> element for a clickable button
+        tile23.classList.add("tile");
+        tile23.style.backgroundImage = "url('/images/023.png')" ;
+        const url23 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item23.appendChild(tile23);
+        tile23.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url23);
+        });
+
+
+        const item24 = document.getElementById("item24");
+        item24.style.gridRowStart = "6";
+        item24.style.gridRowEnd =  "7";
+        item24.style.gridColumnStart = "21";
+        item24.style.gridColumnEnd =   "22"; 
+        const tile24 = document.createElement("div"); // Use <a> element for a clickable button
+        tile24.classList.add("tile");
+        tile24.style.backgroundImage = "url('/images/024.png')" ;
+        const url24 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item24.appendChild(tile24);
+        tile24.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url24);
+        });
+
+
+        const item25 = document.getElementById("item25");
+        item25.style.gridRowStart = "5";
+        item25.style.gridRowEnd =  "6";
+        item25.style.gridColumnStart = "20";
+        item25.style.gridColumnEnd =   "21"; 
+        const tile25 = document.createElement("div"); // Use <a> element for a clickable button
+        tile25.classList.add("tile");
+        tile25.style.backgroundImage = "url('/images/025.png')" ;
+        const url25 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item25.appendChild(tile25);
+        tile25.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url25);
+        });
+
+
+        const item26 = document.getElementById("item26");
+        item26.style.gridRowStart = "4";
+        item26.style.gridRowEnd =  "5";
+        item26.style.gridColumnStart = "21";
+        item26.style.gridColumnEnd =   "22"; 
+        const tile26 = document.createElement("div"); // Use <a> element for a clickable button
+        tile26.classList.add("tile");
+        tile26.style.backgroundImage = "url('/images/026.png')" ;
+        const url26 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item26.appendChild(tile26);
+        tile26.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url26);
+        });
+
+
+        const item27 = document.getElementById("item27");
+        item27.style.gridRowStart = "4";
+        item27.style.gridRowEnd =  "5";
+        item27.style.gridColumnStart = "23";
+        item27.style.gridColumnEnd =   "24"; 
+        const tile27 = document.createElement("div"); // Use <a> element for a clickable button
+        tile27.classList.add("tile");
+        tile27.style.backgroundImage = "url('/images/027.png')" ;
+        const url27 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item27.appendChild(tile27);
+        tile27.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url27);
+        });
+
+
+        const item28 = document.getElementById("item28");
+        item28.style.gridRowStart = "5";
+        item28.style.gridRowEnd =  "6";
+        item28.style.gridColumnStart = "24";
+        item28.style.gridColumnEnd =   "25"; 
+        const tile28 = document.createElement("div"); // Use <a> element for a clickable button
+        tile28.classList.add("tile");
+        tile28.style.backgroundImage = "url('/images/028.png')" ;
+        const url28 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        item28.appendChild(tile28);
+        tile28.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url28);
+        });
+
+
+        const item29 = document.getElementById("item29");
+        item29.style.gridRowStart = "5";
+        item29.style.gridRowEnd =  "6";
+        item29.style.gridColumnStart = "26";
+        item29.style.gridColumnEnd =   "27"; 
+        const tile29 = document.createElement("div"); // Use <a> element for a clickable button
+        tile29.classList.add("tile");
+        tile29.style.backgroundImage = "url('/images/029.png')" ;
+        const url29 = "https://www.canva.com/design/DAFoMlzT3J8/view?embed";
+        item29.appendChild(tile29);
+        tile29.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url29);
+        });
+
+
+        const item30 = document.getElementById("item30");
+        item30.style.gridRowStart = "4";
+        item30.style.gridRowEnd =  "5";
+        item30.style.gridColumnStart = "27";
+        item30.style.gridColumnEnd =   "28"; 
+        const tile30 = document.createElement("div"); // Use <a> element for a clickable button
+        tile30.classList.add("tile");
+        tile30.style.backgroundImage = "url('/images/030.png')" ;
+        const url30 = "https://www.canva.com/design/DAFoMlzT3J8/view?embed";
+        item30.appendChild(tile30);
+        tile30.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent the default behavior of anchor tags
+            openPopup(url30);
+        });
+
+
+
+        function openPopup(url30) {
+        const iframeElement = popupContainer.querySelector("iframe");
+        iframeElement.src = url30;
+
+        popupContainer.style.display = "block";
+
+        // Close the pop-up when the user clicks outside the iframe
+        popupContainer.addEventListener("click", (event) => {
+            if (event.target === popupContainer) {
+            closePopup();
+            }
+        });
+        }
+
+        
+
+        // Function to close the pop-up window
+        function closePopup() {
+        const iframeElement = popupContainer.querySelector("iframe");
+        iframeElement.src = "";
+
+        popupContainer.style.display = "none";
+        }
+    </script>
+</body>
+</html>
