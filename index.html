@@ -63,7 +63,19 @@
             
         }
 
-        
+        /* .item-1 {
+            grid-row-start:1 ;
+            grid-row-end: 2;
+            grid-column-start:1 ;
+            grid-column-end: 2;
+            background-color: bisque;
+        }
+
+        .item-3 {
+            grid-area: 3 / 1 / -1 / -1;
+            background-color: bisque;
+        } */
+
         .button {
         /* Style your button here */
         /* padding: 10px 10px; */
@@ -78,7 +90,16 @@
         height: 45px;
         }
 
-       
+        /* .tile {
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+        } */
+
         .tile {
             width: 100%; /* Adjust the width to 100% to make it responsive */
             height: 0; /* Set height to 0 to maintain the aspect ratio */
@@ -93,7 +114,12 @@
 
         .tile:hover{ scale: 1.2; }
 
-       
+        /* Add a media query for smaller screens */
+        /* @media (max-width: 768px) {
+            .tile {
+                width: 50%; 
+            }
+        } */
         .popup-container {
         position: fixed;
         top: 50%;
@@ -160,7 +186,26 @@
     <script>
         
 
-       
+        // const imageContainer = document.getElementById("end");
+
+        // const imgElement = document.createElement("img");
+        // imgElement.src = "end.png"; // Replace with the actual image path
+        // imgElement.alt = "Your Image Alt Text"; // Replace with appropriate alt text
+        // imageContainer.appendChild(imgElement);
+
+        // const imageContainer2 = document.getElementById("start");               
+
+        // const imgElement2 = document.createElement("img");
+        // imgElement2.src = "start.png"; // Replace with the actual image path
+        // imgElement2.alt = "Your Image Alt Text"; // Replace with appropriate alt text
+        // imageContainer2.appendChild(imgElement2);
+
+        
+        // const tile1 = document.createElement("div"); // Use <a> element for a clickable button
+        // tile1.classList.add("tile");
+        // tile1.style.backgroundImage = "url('01.png')" ;
+        // tile1.href = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        // item1.appendChild(tile1);
 
         const end = document.getElementById("end");
         end.style.gridRowStart = "1";
@@ -169,7 +214,7 @@
         end.style.gridColumnEnd =   "31"; 
         const tileend = document.createElement("div"); // Use <a> element for a clickable button
         tileend.classList.add("tile");
-        tileend.style.backgroundImage = "url('/images/end.png')" ;
+        tileend.style.backgroundImage = "url('end.png')" ;
         tileend.href = "";
         end.appendChild(tileend);
 
@@ -180,7 +225,7 @@
         start.style.gridColumnEnd =   "5"; 
         const tiless = document.createElement("div"); // Use <a> element for a clickable button
         tiless.classList.add("tile");
-        tiless.style.backgroundImage = "url('/images/start.png')" ;
+        tiless.style.backgroundImage = "url('start.png')" ;
         tiless.href = "";
         start.appendChild(tiless);
 
@@ -192,8 +237,8 @@
         item1.style.gridColumnEnd =   "7"; 
         const tile1 = document.createElement("div"); // Use <a> element for a clickable button
         tile1.classList.add("tile");
-        tile1.style.backgroundImage = "url('/images/01.png')" ;
-        const url1 = "https://www.canva.com/design/DAFrCcZ_6C4/view?embed";
+        tile1.style.backgroundImage = "url('01.png')" ;
+        const url1 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item1.appendChild(tile1);
         tile1.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -208,7 +253,7 @@
         item2.style.gridColumnEnd =   "9"; 
         const tile2 = document.createElement("div"); // Use <a> element for a clickable button
         tile2.classList.add("tile");
-        tile2.style.backgroundImage = "url('/images/02.png')" ;
+        tile2.style.backgroundImage = "url('02.png')" ;
         const url2 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item2.appendChild(tile2);
         tile2.addEventListener("click", (event) => {
@@ -224,7 +269,7 @@
         item3.style.gridColumnEnd =   "10"; 
         const tile3 = document.createElement("div"); // Use <a> element for a clickable button
         tile3.classList.add("tile");
-        tile3.style.backgroundImage = "url('/images/03.png')" ;
+        tile3.style.backgroundImage = "url('03.png')" ;
         const url3 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item3.appendChild(tile3);
         tile3.addEventListener("click", (event) => {
@@ -239,7 +284,7 @@
         item4.style.gridColumnEnd =   "12"; 
         const tile4 = document.createElement("div"); // Use <a> element for a clickable button
         tile4.classList.add("tile");
-        tile4.style.backgroundImage = "url('/images/04.png')" ;
+        tile4.style.backgroundImage = "url('04.png')" ;
         const url4 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item4.appendChild(tile4);
         tile4.addEventListener("click", (event) => {
@@ -254,7 +299,7 @@
         item5.style.gridColumnEnd =   "13"; 
         const tile5 = document.createElement("div"); // Use <a> element for a clickable button
         tile5.classList.add("tile");
-        tile5.style.backgroundImage = "url('/images/05.png')" ;
+        tile5.style.backgroundImage = "url('05.png')" ;
         const url5 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item5.appendChild(tile5);
         tile5.addEventListener("click", (event) => {
@@ -270,7 +315,7 @@
         item6.style.gridColumnEnd =   "12"; 
         const tile6 = document.createElement("div"); // Use <a> element for a clickable button
         tile6.classList.add("tile");
-        tile6.style.backgroundImage = "url('/images/06.png')" ;
+        tile6.style.backgroundImage = "url('06.png')" ;
         const url6 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item6.appendChild(tile6);
         tile6.addEventListener("click", (event) => {
@@ -286,7 +331,7 @@
         item7.style.gridColumnEnd =   "12"; 
         const tile7 = document.createElement("div"); // Use <a> element for a clickable button
         tile7.classList.add("tile");
-        tile7.style.backgroundImage = "url('/images/07.png')" ;
+        tile7.style.backgroundImage = "url('07.png')" ;
         const url7 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item7.appendChild(tile7);
         tile7.addEventListener("click", (event) => {
@@ -301,7 +346,7 @@
         item8.style.gridColumnEnd =   "13"; 
         const tile8 = document.createElement("div"); // Use <a> element for a clickable button
         tile8.classList.add("tile");
-        tile8.style.backgroundImage = "url('/images/08.png')" ;
+        tile8.style.backgroundImage = "url('08.png')" ;
         const url8 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item8.appendChild(tile8);
         tile8.addEventListener("click", (event) => {
@@ -316,7 +361,7 @@
         item9.style.gridColumnEnd =   "14"; 
         const tile9 = document.createElement("div"); // Use <a> element for a clickable button
         tile9.classList.add("tile");
-        tile9.style.backgroundImage = "url('/images/09.png')" ;
+        tile9.style.backgroundImage = "url('09.png')" ;
         const url9 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item9.appendChild(tile9);
         tile9.addEventListener("click", (event) => {
@@ -332,7 +377,7 @@
         item10.style.gridColumnEnd =   "16"; 
         const tile10 = document.createElement("div"); // Use <a> element for a clickable button
         tile10.classList.add("tile");
-        tile10.style.backgroundImage = "url('/images/010.png')" ;
+        tile10.style.backgroundImage = "url('010.png')" ;
         const url10 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item10.appendChild(tile10);
         tile10.addEventListener("click", (event) => {
@@ -348,7 +393,7 @@
         item11.style.gridColumnEnd =   "18"; 
         const tile11 = document.createElement("div"); // Use <a> element for a clickable button
         tile11.classList.add("tile");
-        tile11.style.backgroundImage = "url('/images/011.png')" ;
+        tile11.style.backgroundImage = "url('011.png')" ;
         const url11 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item11.appendChild(tile11);
         tile11.addEventListener("click", (event) => {
@@ -364,7 +409,7 @@
         item12.style.gridColumnEnd =   "19"; 
         const tile12 = document.createElement("div"); // Use <a> element for a clickable button
         tile12.classList.add("tile");
-        tile12.style.backgroundImage = "url('/images/012.png')" ;
+        tile12.style.backgroundImage = "url('012.png')" ;
         const url12 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item12.appendChild(tile12);
         tile12.addEventListener("click", (event) => {
@@ -380,7 +425,7 @@
         item13.style.gridColumnEnd =   "19"; 
         const tile13 = document.createElement("div"); // Use <a> element for a clickable button
         tile13.classList.add("tile");
-        tile13.style.backgroundImage = "url('/images/013.png')" ;
+        tile13.style.backgroundImage = "url('013.png')" ;
         const url13 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item13.appendChild(tile13);
         tile13.addEventListener("click", (event) => {
@@ -396,7 +441,7 @@
         item14.style.gridColumnEnd =   "18"; 
         const tile14 = document.createElement("div"); // Use <a> element for a clickable button
         tile14.classList.add("tile");
-        tile14.style.backgroundImage = "url('/images/014.png')" ;
+        tile14.style.backgroundImage = "url('014.png')" ;
         const url14 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item14.appendChild(tile14);
         tile14.addEventListener("click", (event) => {
@@ -412,7 +457,7 @@
         item15.style.gridColumnEnd =   "17"; 
         const tile15 = document.createElement("div"); // Use <a> element for a clickable button
         tile15.classList.add("tile");
-        tile15.style.backgroundImage = "url('/images/015.png')" ;
+        tile15.style.backgroundImage = "url('015.png')" ;
         const url15 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item15.appendChild(tile15);
         tile15.addEventListener("click", (event) => {
@@ -428,7 +473,7 @@
         item16.style.gridColumnEnd =   "16"; 
         const tile16 = document.createElement("div"); // Use <a> element for a clickable button
         tile16.classList.add("tile");
-        tile16.style.backgroundImage = "url('/images/016.png')" ;
+        tile16.style.backgroundImage = "url('016.png')" ;
         const url16 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item16.appendChild(tile16);
         tile16.addEventListener("click", (event) => {
@@ -444,7 +489,7 @@
         item17.style.gridColumnEnd =   "15"; 
         const tile17 = document.createElement("div"); // Use <a> element for a clickable button
         tile17.classList.add("tile");
-        tile17.style.backgroundImage = "url('/images/017.png')" ;
+        tile17.style.backgroundImage = "url('017.png')" ;
         const url17 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item17.appendChild(tile17);
         tile17.addEventListener("click", (event) => {
@@ -460,7 +505,7 @@
         item18.style.gridColumnEnd =   "15"; 
         const tile18 = document.createElement("div"); // Use <a> element for a clickable button
         tile18.classList.add("tile");
-        tile18.style.backgroundImage = "url('/images/018.png')" ;
+        tile18.style.backgroundImage = "url('018.png')" ;
         const url18 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item18.appendChild(tile18);
         tile18.addEventListener("click", (event) => {
@@ -476,7 +521,7 @@
         item19.style.gridColumnEnd =   "16"; 
         const tile19 = document.createElement("div"); // Use <a> element for a clickable button
         tile19.classList.add("tile");
-        tile19.style.backgroundImage = "url('/images/019.png')" ;
+        tile19.style.backgroundImage = "url('019.png')" ;
         const url19 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item19.appendChild(tile19);
         tile19.addEventListener("click", (event) => {
@@ -492,7 +537,7 @@
         item20.style.gridColumnEnd =   "18"; 
         const tile20 = document.createElement("div"); // Use <a> element for a clickable button
         tile20.classList.add("tile");
-        tile20.style.backgroundImage = "url('/images/020.png')" ;
+        tile20.style.backgroundImage = "url('020.png')" ;
         const url20 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item20.appendChild(tile20);
         tile20.addEventListener("click", (event) => {
@@ -508,7 +553,7 @@
         item21.style.gridColumnEnd =   "20"; 
         const tile21 = document.createElement("div"); // Use <a> element for a clickable button
         tile21.classList.add("tile");
-        tile21.style.backgroundImage = "url('/images/021.png')" ;
+        tile21.style.backgroundImage = "url('021.png')" ;
         const url21 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item21.appendChild(tile21);
         tile21.addEventListener("click", (event) => {
@@ -524,7 +569,7 @@
         item22.style.gridColumnEnd =   "21"; 
         const tile22 = document.createElement("div"); // Use <a> element for a clickable button
         tile22.classList.add("tile");
-        tile22.style.backgroundImage = "url('/images/022.png')" ;
+        tile22.style.backgroundImage = "url('022.png')" ;
         const url22 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item22.appendChild(tile22);
         tile22.addEventListener("click", (event) => {
@@ -540,7 +585,7 @@
         item23.style.gridColumnEnd =   "22"; 
         const tile23 = document.createElement("div"); // Use <a> element for a clickable button
         tile23.classList.add("tile");
-        tile23.style.backgroundImage = "url('/images/023.png')" ;
+        tile23.style.backgroundImage = "url('023.png')" ;
         const url23 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item23.appendChild(tile23);
         tile23.addEventListener("click", (event) => {
@@ -556,7 +601,7 @@
         item24.style.gridColumnEnd =   "22"; 
         const tile24 = document.createElement("div"); // Use <a> element for a clickable button
         tile24.classList.add("tile");
-        tile24.style.backgroundImage = "url('/images/024.png')" ;
+        tile24.style.backgroundImage = "url('024.png')" ;
         const url24 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item24.appendChild(tile24);
         tile24.addEventListener("click", (event) => {
@@ -572,7 +617,7 @@
         item25.style.gridColumnEnd =   "21"; 
         const tile25 = document.createElement("div"); // Use <a> element for a clickable button
         tile25.classList.add("tile");
-        tile25.style.backgroundImage = "url('/images/025.png')" ;
+        tile25.style.backgroundImage = "url('025.png')" ;
         const url25 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item25.appendChild(tile25);
         tile25.addEventListener("click", (event) => {
@@ -588,7 +633,7 @@
         item26.style.gridColumnEnd =   "22"; 
         const tile26 = document.createElement("div"); // Use <a> element for a clickable button
         tile26.classList.add("tile");
-        tile26.style.backgroundImage = "url('/images/026.png')" ;
+        tile26.style.backgroundImage = "url('026.png')" ;
         const url26 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item26.appendChild(tile26);
         tile26.addEventListener("click", (event) => {
@@ -604,7 +649,7 @@
         item27.style.gridColumnEnd =   "24"; 
         const tile27 = document.createElement("div"); // Use <a> element for a clickable button
         tile27.classList.add("tile");
-        tile27.style.backgroundImage = "url('/images/027.png')" ;
+        tile27.style.backgroundImage = "url('027.png')" ;
         const url27 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item27.appendChild(tile27);
         tile27.addEventListener("click", (event) => {
@@ -620,7 +665,7 @@
         item28.style.gridColumnEnd =   "25"; 
         const tile28 = document.createElement("div"); // Use <a> element for a clickable button
         tile28.classList.add("tile");
-        tile28.style.backgroundImage = "url('/images/028.png')" ;
+        tile28.style.backgroundImage = "url('028.png')" ;
         const url28 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item28.appendChild(tile28);
         tile28.addEventListener("click", (event) => {
@@ -636,8 +681,8 @@
         item29.style.gridColumnEnd =   "27"; 
         const tile29 = document.createElement("div"); // Use <a> element for a clickable button
         tile29.classList.add("tile");
-        tile29.style.backgroundImage = "url('/images/029.png')" ;
-        const url29 = "https://www.canva.com/design/DAFoMlzT3J8/view?embed";
+        tile29.style.backgroundImage = "url('029.png')" ;
+        const url29 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item29.appendChild(tile29);
         tile29.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -685,6 +730,11 @@
 
         popupContainer.style.display = "none";
         }
+
+      
+
+
+
     </script>
 </body>
 </html>
