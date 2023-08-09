@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        
-
         .header {
             display: flex;
             align-items: center;
@@ -15,20 +13,12 @@
             color: #ff00c7;
             font-size: 3rem; /* Adjust the base font size as needed */
             text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-            
         }
-
-    
-
         .container {
             display:grid;
             grid-template-rows: repeat(9, 1fr);
             grid-template-columns:repeat(32, 1fr);
-            /* background-color: black; */
-            /* grid-gap: 5px; */
             grid-row-gap: 5px;
-            
-
         }
         
         img {
@@ -50,35 +40,17 @@
         } 
      
         .pic{
-           /* grid-area: 2 / 4 / 4 / 6; */
-           /* background-color: blue; */
            z-index: 1;
         }
 
         .item {
-            /* background-color: bisque; */
             display: flex;
             justify-content: center;
             align-items: center;
             
         }
 
-        /* .item-1 {
-            grid-row-start:1 ;
-            grid-row-end: 2;
-            grid-column-start:1 ;
-            grid-column-end: 2;
-            background-color: bisque;
-        }
-
-        .item-3 {
-            grid-area: 3 / 1 / -1 / -1;
-            background-color: bisque;
-        } */
-
         .button {
-        /* Style your button here */
-        /* padding: 10px 10px; */
         background-color: #007bff;
         color: #fff;
         text-decoration: none;
@@ -89,16 +61,6 @@
         width: 45px;
         height: 45px;
         }
-
-        /* .tile {
-        width: 50px;
-        height: 50px;
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        object-fit: cover;
-        } */
 
         .tile {
             width: 100%; /* Adjust the width to 100% to make it responsive */
@@ -114,19 +76,13 @@
 
         .tile:hover{ scale: 1.2; }
 
-        /* Add a media query for smaller screens */
-        /* @media (max-width: 768px) {
-            .tile {
-                width: 50%; 
-            }
-        } */
         .popup-container {
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 90%;
-        max-width: 600px;
+        max-width: 380px;
         background-color: #fff;
         box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
         border-radius: 8px;
@@ -180,33 +136,7 @@
             </iframe>
           </div>
     </div>
-    
-    
-
     <script>
-        
-
-        // const imageContainer = document.getElementById("end");
-
-        // const imgElement = document.createElement("img");
-        // imgElement.src = "end.png"; // Replace with the actual image path
-        // imgElement.alt = "Your Image Alt Text"; // Replace with appropriate alt text
-        // imageContainer.appendChild(imgElement);
-
-        // const imageContainer2 = document.getElementById("start");               
-
-        // const imgElement2 = document.createElement("img");
-        // imgElement2.src = "start.png"; // Replace with the actual image path
-        // imgElement2.alt = "Your Image Alt Text"; // Replace with appropriate alt text
-        // imageContainer2.appendChild(imgElement2);
-
-        
-        // const tile1 = document.createElement("div"); // Use <a> element for a clickable button
-        // tile1.classList.add("tile");
-        // tile1.style.backgroundImage = "url('01.png')" ;
-        // tile1.href = "https://www.canva.com/design/DAFoMlzT3J8/view";
-        // item1.appendChild(tile1);
-
         const end = document.getElementById("end");
         end.style.gridRowStart = "1";
         end.style.gridRowEnd =  "4";
@@ -316,7 +246,7 @@
         const tile6 = document.createElement("div"); // Use <a> element for a clickable button
         tile6.classList.add("tile");
         tile6.style.backgroundImage = "url('./images/06.png')" ;
-        const url6 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url6 = "https://www.canva.com/design/DAFrDAiOY38/view?embed";
         item6.appendChild(tile6);
         tile6.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -332,7 +262,7 @@
         const tile7 = document.createElement("div"); // Use <a> element for a clickable button
         tile7.classList.add("tile");
         tile7.style.backgroundImage = "url('./images/07.png')" ;
-        const url7 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url7 = "https://www.canva.com/design/DAFrDPAcHB8/view?embed";
         item7.appendChild(tile7);
         tile7.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -347,7 +277,7 @@
         const tile8 = document.createElement("div"); // Use <a> element for a clickable button
         tile8.classList.add("tile");
         tile8.style.backgroundImage = "url('images/08.png')" ;
-        const url8 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url8 = "https://www.canva.com/design/DAFrDD5O-iQ/view?embed";
         item8.appendChild(tile8);
         tile8.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -362,7 +292,7 @@
         const tile9 = document.createElement("div"); // Use <a> element for a clickable button
         tile9.classList.add("tile");
         tile9.style.backgroundImage = "url('images/09.png')" ;
-        const url9 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url9 = "https://www.canva.com/design/DAFrDOhEzlc/view?embed";
         item9.appendChild(tile9);
         tile9.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -378,7 +308,7 @@
         const tile10 = document.createElement("div"); // Use <a> element for a clickable button
         tile10.classList.add("tile");
         tile10.style.backgroundImage = "url('images/010.png')" ;
-        const url10 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url10 = "https://www.canva.com/design/DAFrDPsQXZM/view?embed";
         item10.appendChild(tile10);
         tile10.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -394,7 +324,7 @@
         const tile11 = document.createElement("div"); // Use <a> element for a clickable button
         tile11.classList.add("tile");
         tile11.style.backgroundImage = "url('images/011.png')" ;
-        const url11 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url11 = "https://www.canva.com/design/DAFrDGBZ7eQ/view?embed";
         item11.appendChild(tile11);
         tile11.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -410,7 +340,7 @@
         const tile12 = document.createElement("div"); // Use <a> element for a clickable button
         tile12.classList.add("tile");
         tile12.style.backgroundImage = "url('images/012.png')" ;
-        const url12 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url12 = "https://www.canva.com/design/DAFrDT6t03E/view?embed";
         item12.appendChild(tile12);
         tile12.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -426,7 +356,7 @@
         const tile13 = document.createElement("div"); // Use <a> element for a clickable button
         tile13.classList.add("tile");
         tile13.style.backgroundImage = "url('images/013.png')" ;
-        const url13 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url13 = "https://www.canva.com/design/DAFrDSKr3EU/view?embed";
         item13.appendChild(tile13);
         tile13.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -442,7 +372,7 @@
         const tile14 = document.createElement("div"); // Use <a> element for a clickable button
         tile14.classList.add("tile");
         tile14.style.backgroundImage = "url('images/014.png')" ;
-        const url14 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url14 = "https://www.canva.com/design/DAFrDfCSEYg/view?embed";
         item14.appendChild(tile14);
         tile14.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -458,7 +388,7 @@
         const tile15 = document.createElement("div"); // Use <a> element for a clickable button
         tile15.classList.add("tile");
         tile15.style.backgroundImage = "url('images/015.png')" ;
-        const url15 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url15 = "https://www.canva.com/design/DAFrDZVRjcg/view?embed";
         item15.appendChild(tile15);
         tile15.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -474,7 +404,7 @@
         const tile16 = document.createElement("div"); // Use <a> element for a clickable button
         tile16.classList.add("tile");
         tile16.style.backgroundImage = "url('images/016.png')" ;
-        const url16 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url16 = "https://www.canva.com/design/DAFrDb6-9vI/view?embed";
         item16.appendChild(tile16);
         tile16.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -490,7 +420,7 @@
         const tile17 = document.createElement("div"); // Use <a> element for a clickable button
         tile17.classList.add("tile");
         tile17.style.backgroundImage = "url('images/017.png')" ;
-        const url17 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url17 = "https://www.canva.com/design/DAFrDZOPwqk/view?embed";
         item17.appendChild(tile17);
         tile17.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -506,7 +436,7 @@
         const tile18 = document.createElement("div"); // Use <a> element for a clickable button
         tile18.classList.add("tile");
         tile18.style.backgroundImage = "url('images/018.png')" ;
-        const url18 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url18 = "https://www.canva.com/design/DAFrDerAuPc/view?embed";
         item18.appendChild(tile18);
         tile18.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -522,7 +452,7 @@
         const tile19 = document.createElement("div"); // Use <a> element for a clickable button
         tile19.classList.add("tile");
         tile19.style.backgroundImage = "url('images/019.png')" ;
-        const url19 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url19 = "https://www.canva.com/design/DAFrDVCQQoA/view?embed";
         item19.appendChild(tile19);
         tile19.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -538,7 +468,7 @@
         const tile20 = document.createElement("div"); // Use <a> element for a clickable button
         tile20.classList.add("tile");
         tile20.style.backgroundImage = "url('images/020.png')" ;
-        const url20 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url20 = "https://www.canva.com/design/DAFrDXBy3ps/view?embed";
         item20.appendChild(tile20);
         tile20.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -554,7 +484,7 @@
         const tile21 = document.createElement("div"); // Use <a> element for a clickable button
         tile21.classList.add("tile");
         tile21.style.backgroundImage = "url('images/021.png')" ;
-        const url21 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url21 = "https://www.canva.com/design/DAFrDU1J0pw/view?embed";
         item21.appendChild(tile21);
         tile21.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -570,7 +500,7 @@
         const tile22 = document.createElement("div"); // Use <a> element for a clickable button
         tile22.classList.add("tile");
         tile22.style.backgroundImage = "url('images/022.png')" ;
-        const url22 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url22 = "https://www.canva.com/design/DAFrDYkFBvE/view?embed";
         item22.appendChild(tile22);
         tile22.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -586,7 +516,7 @@
         const tile23 = document.createElement("div"); // Use <a> element for a clickable button
         tile23.classList.add("tile");
         tile23.style.backgroundImage = "url('images/023.png')" ;
-        const url23 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url23 = "https://www.canva.com/design/DAFrDREJtVU/view?embed";
         item23.appendChild(tile23);
         tile23.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -602,7 +532,7 @@
         const tile24 = document.createElement("div"); // Use <a> element for a clickable button
         tile24.classList.add("tile");
         tile24.style.backgroundImage = "url('images/024.png')" ;
-        const url24 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url24 = "https://www.canva.com/design/DAFrDeagQ4g/view?embed";
         item24.appendChild(tile24);
         tile24.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -618,7 +548,7 @@
         const tile25 = document.createElement("div"); // Use <a> element for a clickable button
         tile25.classList.add("tile");
         tile25.style.backgroundImage = "url('images/025.png')" ;
-        const url25 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url25 = "https://www.canva.com/design/DAFrDbe4TS0/view?embed";
         item25.appendChild(tile25);
         tile25.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -634,7 +564,7 @@
         const tile26 = document.createElement("div"); // Use <a> element for a clickable button
         tile26.classList.add("tile");
         tile26.style.backgroundImage = "url('images/026.png')" ;
-        const url26 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url26 = "https://www.canva.com/design/DAFrDfyiZ0U/view?embed";
         item26.appendChild(tile26);
         tile26.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -650,7 +580,7 @@
         const tile27 = document.createElement("div"); // Use <a> element for a clickable button
         tile27.classList.add("tile");
         tile27.style.backgroundImage = "url('images/027.png')" ;
-        const url27 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url27 = "https://www.canva.com/design/DAFrDfQhXHs/view?embed";
         item27.appendChild(tile27);
         tile27.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -666,7 +596,7 @@
         const tile28 = document.createElement("div"); // Use <a> element for a clickable button
         tile28.classList.add("tile");
         tile28.style.backgroundImage = "url('images/028.png')" ;
-        const url28 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url28 = "https://www.canva.com/design/DAFrDQJ6cPQ/view?embed";
         item28.appendChild(tile28);
         tile28.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -682,7 +612,7 @@
         const tile29 = document.createElement("div"); // Use <a> element for a clickable button
         tile29.classList.add("tile");
         tile29.style.backgroundImage = "url('images/029.png')" ;
-        const url29 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url29 = "https://www.canva.com/design/DAFrDTdACAg/view?embed";
         item29.appendChild(tile29);
         tile29.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -698,7 +628,7 @@
         const tile30 = document.createElement("div"); // Use <a> element for a clickable button
         tile30.classList.add("tile");
         tile30.style.backgroundImage = "url('images/030.png')" ;
-        const url30 = "https://www.canva.com/design/DAFoMlzT3J8/view?embed";
+        const url30 = "https://www.canva.com/design/DAFrDWs3SSo/view?embed";
         item30.appendChild(tile30);
         tile30.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
