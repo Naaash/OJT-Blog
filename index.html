@@ -63,7 +63,19 @@
             
         }
 
-        
+        /* .item-1 {
+            grid-row-start:1 ;
+            grid-row-end: 2;
+            grid-column-start:1 ;
+            grid-column-end: 2;
+            background-color: bisque;
+        }
+
+        .item-3 {
+            grid-area: 3 / 1 / -1 / -1;
+            background-color: bisque;
+        } */
+
         .button {
         /* Style your button here */
         /* padding: 10px 10px; */
@@ -78,7 +90,16 @@
         height: 45px;
         }
 
-       
+        /* .tile {
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+        } */
+
         .tile {
             width: 100%; /* Adjust the width to 100% to make it responsive */
             height: 0; /* Set height to 0 to maintain the aspect ratio */
@@ -93,7 +114,12 @@
 
         .tile:hover{ scale: 1.2; }
 
-       
+        /* Add a media query for smaller screens */
+        /* @media (max-width: 768px) {
+            .tile {
+                width: 50%; 
+            }
+        } */
         .popup-container {
         position: fixed;
         top: 50%;
@@ -160,7 +186,26 @@
     <script>
         
 
-       
+        // const imageContainer = document.getElementById("end");
+
+        // const imgElement = document.createElement("img");
+        // imgElement.src = "end.png"; // Replace with the actual image path
+        // imgElement.alt = "Your Image Alt Text"; // Replace with appropriate alt text
+        // imageContainer.appendChild(imgElement);
+
+        // const imageContainer2 = document.getElementById("start");               
+
+        // const imgElement2 = document.createElement("img");
+        // imgElement2.src = "start.png"; // Replace with the actual image path
+        // imgElement2.alt = "Your Image Alt Text"; // Replace with appropriate alt text
+        // imageContainer2.appendChild(imgElement2);
+
+        
+        // const tile1 = document.createElement("div"); // Use <a> element for a clickable button
+        // tile1.classList.add("tile");
+        // tile1.style.backgroundImage = "url('01.png')" ;
+        // tile1.href = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        // item1.appendChild(tile1);
 
         const end = document.getElementById("end");
         end.style.gridRowStart = "1";
@@ -209,7 +254,7 @@
         const tile2 = document.createElement("div"); // Use <a> element for a clickable button
         tile2.classList.add("tile");
         tile2.style.backgroundImage = "url('/images/02.png')" ;
-        const url2 = "https://www.canva.com/design/DAFoMlzT3J8/view";
+        const url2 = "https://www.canva.com/design/DAFrCSiFIOI/view?embed";
         item2.appendChild(tile2);
         tile2.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -637,7 +682,7 @@
         const tile29 = document.createElement("div"); // Use <a> element for a clickable button
         tile29.classList.add("tile");
         tile29.style.backgroundImage = "url('/images/029.png')" ;
-        const url29 = "https://www.canva.com/design/DAFoMlzT3J8/view?embed";
+        const url29 = "https://www.canva.com/design/DAFoMlzT3J8/view";
         item29.appendChild(tile29);
         tile29.addEventListener("click", (event) => {
             event.preventDefault(); // Prevent the default behavior of anchor tags
@@ -685,6 +730,11 @@
 
         popupContainer.style.display = "none";
         }
+
+      
+
+
+
     </script>
 </body>
 </html>
